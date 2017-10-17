@@ -23,8 +23,8 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $("body").height() * .8 * Math.random(),
+      $("body").width() * .8 * Math.random(),
       Math.random() * 1000
     );
     dancers.push(dancer);
@@ -41,7 +41,7 @@ $(document).ready(function() {
 
   $('.lineUpButton').on('click', function(event) {
     for (var i = 0; i < window.dancers.length; ++i) {
-      window.dancers[i].lineUp($("body").height() * .8, null, false);
+      window.dancers[i].lineUp($("body").height() * .7, null, false);
     }
   });
   
@@ -53,15 +53,20 @@ $(document).ready(function() {
 
   $('.danceoff').on('click', function(event) {
     for (var i = 0; i < window.dancers.length; ++i) {
-      window.dancers[i].lineUp($("body").height() * .8, null);
+      window.dancers[i].lineUp($("body").height() * .7, null);
     }
     window.dancers[0].danceOff($("body").height() * .5, null, true);
     window.dancers[1].danceOff($("body").height() * .5, null, true);
   });
 
-  $('.dancer').on('mouseover', function(event) {
+  $('body').on('mouseover','.dancer', function(event) {
     console.log('hello');
     $(this).addClass('highlight');
   });
+  $('body').on('mouseleave','.dancer', function(event) {
+    console.log('hello');
+    $(this).removeClass('highlight');
+  });
+  
 });
 

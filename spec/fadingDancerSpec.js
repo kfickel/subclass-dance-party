@@ -18,6 +18,28 @@ describe('FadingDancer', function() {
     expect(fadingDancer.$node.fadeToggle.called).to.be.true;
   });
 
+  it('should change the top location of the dancers to the same top location', function() {
+    var testDancer = new FadingDancer(10, 20, timeBetweenSteps);
+    fadingDancer.lineUp();
+    testDancer.lineUp();
+    console.log(fadingDancer.$node.css('top') + ' ' + testDancer.$node.css('top'));
+    expect(fadingDancer.$node.css('top')).to.be.equal(testDancer.$node.css('top'));
+  });
+
+  it('should return dancer to its original top and original left location', function() {
+    fadingDancer.lineUp();
+    fadingDancer.disperse();
+    expect(fadingDancer.$node.css('top')).to.be.equal(fadingDancer.originalTop + 'px');
+  });
+
+  it('should check if danceoff is a function', function() {
+    expect(fadingDancer.danceOff).to.be.a('function');
+  });
+
+  it('should check if interact is a function', function() {
+    expect(fadingDancer.interact).to.be.a('function');
+  });
+
   describe('dance', function() {
     it('should call step at least once per second', function() {
       sinon.spy(fadingDancer, 'step');

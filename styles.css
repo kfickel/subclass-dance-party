@@ -31,20 +31,36 @@ body, a:link, a:visited, a:active{
   font-weight: bold;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  /*border:10px solid red;
+  border-radius:10px;*/
   position:absolute;
 }
 .dancer.slide{
   border-radius:10px;
-  height: 30px;
-  border-color: #1ECCE6;
+  background-image: url('kneeling-john-travolta.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20%;
+  height: 50%;
+  background-size: 50%;
+  /*border-color: #1ECCE6;*/
 }
 .dancer.blinky{
-  border-color: #2DD84A;
+  background-image: url('john-travolta.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 15%;
+  height: 50%;
+  /*border-color: #2DD84A;*/
 }
 .dancer.fade {
-  border-color: #FA820A;
+  background-image: url('what-john-travolta.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20%;
+  height: 30%;
+  background-size: 80%;
+  /*border-color: #FA820A;*/
 }
 .lineUpButton{
   font-size:20px;
