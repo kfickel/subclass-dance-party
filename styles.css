@@ -22,6 +22,9 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
+.addDancerButton:hover {
+  background-color: white;
+}
 .topbar{
   height:32px;
   background-color: #555;
@@ -34,6 +37,7 @@ body, a:link, a:visited, a:active{
   border:10px solid white;
   border-radius:10px;
   position:absolute;
+  transition: border 2s;
 }
 .dancer.slide{
   border-radius:10px;
@@ -53,6 +57,9 @@ body, a:link, a:visited, a:active{
   height: 50%;
   /*border-color: #2DD84A;*/
 }
+.dancer:hover{
+  border:10px solid yellow;
+}
 .dancer.fade {
   background-image: url('what-john-travolta.gif');
   background-repeat: no-repeat;
@@ -65,18 +72,28 @@ body, a:link, a:visited, a:active{
 .lineUpButton{
   font-size:20px;
   padding:5px 12px;
+  float:left;
 }
 
 .disperse {
   font-size:20px;
   padding:5px 12px;
+  float: left;
 }
 
 .danceoff {
   font-size:20px;
   padding:5px 12px;
+  float: left;
+}
+
+
+.lineUpButton:hover, .disperse:hover, .danceoff:hover {
+  background-color: white;
 }
 
 .highlight {
   background-color: white;
 }
+
+

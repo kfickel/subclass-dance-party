@@ -15,14 +15,14 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
-    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+    const dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
     // get the maker function for the kind of dancer we're supposed to make
-    var dancerMakerFunction = window[dancerMakerFunctionName];
+    const dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
 
-    var dancer = new dancerMakerFunction(
+    const dancer = new dancerMakerFunction(
       $("body").height() * .8 * Math.random(),
       $("body").width() * .8 * Math.random(),
       Math.random() * 1000
@@ -32,39 +32,33 @@ $(document).ready(function() {
     //check if the arrays length is even
     if (window.dancers.length % 2 === 0) {
       //if it is the second, call the first one's with interact
-      var dancer1 = window.dancers[window.dancers.length - 1];
-      var dancer2 = window.dancers[window.dancers.length - 2];
+      const dancer1 = window.dancers[window.dancers.length - 1];
+      const dancer2 = window.dancers[window.dancers.length - 2];
       dancer1.interact(dancer2.originalTop, dancer2.originalLeft);
       dancer2.interact(dancer1.originalTop, dancer1.originalLeft);
     }
   });
 
-  $('.lineUpButton').on('click', function(event) {
-    for (var i = 0; i < window.dancers.length; ++i) {
+  $('.lineUpButton').on('click', (event) => {
+    for (let i = 0; i < window.dancers.length; ++i) {
       window.dancers[i].lineUp($("body").height() * .7, null, false);
     }
   });
   
-  $('.disperse').on('click', function(event) {
-    for (var i = 0; i < window.dancers.length; ++i) {
+  $('.disperse').on('click', (event) => {
+    for (let i = 0; i < window.dancers.length; ++i) {
       window.dancers[i].disperse(false);
     }
   });
 
-  $('.danceoff').on('click', function(event) {
-    for (var i = 0; i < window.dancers.length; ++i) {
+  $('.danceoff').on('click', (event) => {
+    for (let i = 0; i < window.dancers.length; ++i) {
       window.dancers[i].lineUp($("body").height() * .7, null);
     }
     window.dancers[0].danceOff($("body").height() * .2, $("body").width() * .4, true);
     window.dancers[1].danceOff($("body").height() * .2, $("body").width() * .6, true);
   });
 
-  $('body').on('mouseover','.dancer', function(event) {
-    $(this).addClass('highlight');
-  });
-  $('body').on('mouseleave','.dancer', function(event) {
-    $(this).removeClass('highlight');
-  });
   
 });
 
