@@ -31,9 +31,9 @@ Dancer.prototype.disperse = function(isDancing) {
   this.setPosition(this.originalTop, this.originalLeft);
 };
 
-Dancer.prototype.danceOff = function(direction, isDancing) {
+Dancer.prototype.danceOff = function(top, left, isDancing) {
   //this.setPosition(top || this.originalTop, left || this.originalLeft);
-  this.$node.animate({top: "250px" }, 5000, function() {});
+  this.$node.animate({top: top, left: left }, 1000, function() {});
   this.isDancing = isDancing;
   // var t = 0;
 
@@ -56,9 +56,8 @@ Dancer.prototype.danceOff = function(direction, isDancing) {
 };
 
 Dancer.prototype.interact = function(top, left) {
-  console.log(top + ' ' + left);
-  this.$node.animate({top: top, left: left }, 5000, function() {});
-  this.$node.animate({top: this.originalTop, left: this.originalLeft }, 5000, function() {});
+  this.$node.animate({top: top, left: left }, 2000, function() {});
+  this.$node.animate({top: this.originalTop, left: this.originalLeft }, 2000, function() {});
 };
 
 Dancer.prototype.setPosition = function(top, left) {

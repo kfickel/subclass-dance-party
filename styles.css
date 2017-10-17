@@ -31,8 +31,8 @@ body, a:link, a:visited, a:active{
   font-weight: bold;
 }
 .dancer{
-  /*border:10px solid red;
-  border-radius:10px;*/
+  border:10px solid white;
+  border-radius:10px;
   position:absolute;
 }
 .dancer.slide{

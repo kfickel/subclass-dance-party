@@ -55,16 +55,14 @@ $(document).ready(function() {
     for (var i = 0; i < window.dancers.length; ++i) {
       window.dancers[i].lineUp($("body").height() * .7, null);
     }
-    window.dancers[0].danceOff($("body").height() * .5, null, true);
-    window.dancers[1].danceOff($("body").height() * .5, null, true);
+    window.dancers[0].danceOff($("body").height() * .2, $("body").width() * .4, true);
+    window.dancers[1].danceOff($("body").height() * .2, $("body").width() * .6, true);
   });
 
   $('body').on('mouseover','.dancer', function(event) {
-    console.log('hello');
     $(this).addClass('highlight');
   });
   $('body').on('mouseleave','.dancer', function(event) {
-    console.log('hello');
     $(this).removeClass('highlight');
   });
   
