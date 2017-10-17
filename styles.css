@@ -1,3 +1,8 @@
+@keyframes resize {
+  0%   {border-radius: 10px;}
+  50%  {border-radius: 50px;}
+  100% {border-radius: 10px;}
+}
 body, html{
   height:100%;
 }
@@ -5,6 +10,10 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-image: url("snf.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -19,9 +28,28 @@ body, a:link, a:visited, a:active{
 }
 .title{
   background-color: #777;
+  font-weight: bold;
 }
 .dancer{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+.dancer.slide{
+  border-radius:10px;
+  height: 30px;
+  border-color: #1ECCE6;
+}
+.dancer.blinky{
+  border-color: #2DD84A;
+}
+.dancer.fade {
+  border-color: #FA820A;
+}
+.lineUpButton{
+  font-size:20px;
+  padding:5px 12px;
+}
+.highlight {
+  background-color: white;
 }
