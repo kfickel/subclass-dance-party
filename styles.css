@@ -66,6 +66,17 @@ body, a:link, a:visited, a:active{
   font-size:20px;
   padding:5px 12px;
 }
+
+.disperse {
+  font-size:20px;
+  padding:5px 12px;
+}
+
+.danceoff {
+  font-size:20px;
+  padding:5px 12px;
+}
+
 .highlight {
   background-color: white;
 }
