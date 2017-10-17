@@ -29,6 +29,14 @@ $(document).ready(function() {
     );
     dancers.push(dancer);
     $('body').append(dancer.$node);
+    //check if the arrays length is even
+    if (window.dancers.length % 2 === 0) {
+      //if it is the second, call the first one's with interact
+      var dancer1 = window.dancers[window.dancers.length - 1];
+      var dancer2 = window.dancers[window.dancers.length - 2];
+      dancer1.interact(dancer2.originalTop, dancer2.originalLeft);
+      dancer2.interact(dancer1.originalTop, dancer1.originalLeft);
+    }
   });
 
   $('.lineUpButton').on('click', function(event) {
@@ -47,9 +55,13 @@ $(document).ready(function() {
     for (var i = 0; i < window.dancers.length; ++i) {
       window.dancers[i].lineUp($("body").height() * .8, null);
     }
-    console.log(window.dancers[0]);
     window.dancers[0].danceOff($("body").height() * .5, null, true);
     window.dancers[1].danceOff($("body").height() * .5, null, true);
+  });
+
+  $('.dancer').on('mouseover', function(event) {
+    console.log('hello');
+    $(this).addClass('highlight');
   });
 });
 

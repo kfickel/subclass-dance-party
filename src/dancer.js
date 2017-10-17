@@ -55,6 +55,12 @@ Dancer.prototype.danceOff = function(direction, isDancing) {
   // dance();
 };
 
+Dancer.prototype.interact = function(top, left) {
+  console.log(top + ' ' + left);
+  this.$node.animate({top: top, left: left }, 5000, function() {});
+  this.$node.animate({top: this.originalTop, left: this.originalLeft }, 5000, function() {});
+};
+
 Dancer.prototype.setPosition = function(top, left) {
   // Use css top and left properties to position our <span> tag
   // where it belongs on the page. See http://api.jquery.com/css/
