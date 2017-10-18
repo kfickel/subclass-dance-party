@@ -32,12 +32,29 @@ class Dancer {
   }
 
   disperse() {
+    this.$node.removeClass('dancing');
     this.setPosition(this.originalTop, this.originalLeft);
   }
   danceOff(top, left) {
     this.hovered = true;
     this.$node.stop(true, true);
-    this.$node.animate({top: top, left: left }, 2000, function() {});
+    let query = this.$node;
+    let flip = false;
+    this.$node.animate({top: top, left: left }, 2000, function() {
+      query.addClass('dancing');
+      setTimeout(() => query.removeClass('dancing'), 2000);
+      //query.animate(query.addClass('dancing'), 1000, function() {
+      //  query.removeClass('dancing');
+      //});
+    });
+      // function() {
+      // if (!flip) {
+      //   query.addClass('dancing');
+      // } else {
+      //   query.removeClass('dancing');
+      // }
+      // flip = !flip;
+      // );
     this.hovered = false;
   }
   interact(top, left) {
