@@ -41,7 +41,7 @@ $(document).ready(function() {
 
   $('.lineUpButton').on('click', (event) => {
     for (let i = 0; i < window.dancers.length; ++i) {
-      window.dancers[i].lineUp($("body").height() * .7, null, false);
+      window.dancers[i].lineUp($("body").height() * .7, null);
     }
   });
   
@@ -56,8 +56,8 @@ $(document).ready(function() {
       window.dancers[i].lineUp($("body").height() * .7, null);
     }
     if (window.dancers[1]) {
-      window.dancers[0].danceOff($("body").height() * .2, $("body").width() * .4, true);
-      window.dancers[1].danceOff($("body").height() * .2, $("body").width() * .6, true);
+      window.dancers[0].danceOff($("body").height() * .2, $("body").width() * .4);
+      window.dancers[1].danceOff($("body").height() * .2, $("body").width() * .6);
     }
   });
 

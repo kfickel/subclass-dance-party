@@ -1,8 +1,3 @@
-@keyframes resize {
-  0%   {border-radius: 10px;}
-  50%  {border-radius: 50px;}
-  100% {border-radius: 10px;}
-}
 body, html{
   height:100%;
 }
@@ -47,7 +42,6 @@ body, a:link, a:visited, a:active{
   width: 15%;
   height: 20%;
   background-size: 50%;
-  /*border-color: #1ECCE6;*/
 }
 .dancer.blinky{
   background-image: url('john-travolta.png');
@@ -56,7 +50,6 @@ body, a:link, a:visited, a:active{
   width: 10%;
   height: 25%;
   background-size: 80%;
-  /*border-color: #2DD84A;*/
 }
 .dancer:hover{
   border:10px solid yellow;
@@ -68,7 +61,6 @@ body, a:link, a:visited, a:active{
   width: 20%;
   height: 30%;
   background-size: 80%;
-  /*border-color: #FA820A;*/
 }
 .dancer.dancing {
   -moz-transform: scaleX(-1);
